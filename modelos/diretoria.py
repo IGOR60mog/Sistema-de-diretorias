@@ -45,14 +45,14 @@ class Diretoria:
 class Diretorias (CRUD):
   @classmethod
   def salvar(cls):
-    with open("Diretorias.json", mode="w") as arquivo:   # w - write
+    with open("diretorias.json", mode="w") as arquivo:   # w - write
       json.dump(cls.objetos, arquivo, default = Diretoria.to_json)
 
   @classmethod
   def abrir(cls):
     cls.objetos = []
     try:
-      with open("Diretorias.json", mode="r") as arquivo:   # r - read
+      with open("diretorias.json", mode="r") as arquivo:   # r - read
         texto = json.load(arquivo)
         for obj in texto:   
           c = Diretoria(obj["id"], obj["nome"], obj["finalidade"], obj["email"])

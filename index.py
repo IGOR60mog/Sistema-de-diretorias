@@ -40,9 +40,6 @@ class IndexUI:
         if st.sidebar.button("Sair"):
             del st.session_state["usuario_id"]
             del st.session_state["usuario_nome"]
-            if st.session_state['questionario_id']:  del st.session_state['questionario_id']
-            if st.session_state['sorteio']: del st.session_state['sorteio']
-            if st.session_state['respostas']: del st.session_state['respostas']
         st.rerun()
     
     def sidebar():

@@ -21,4 +21,6 @@ class InfoDiretoriasUI:
                     st.write(" ")
                     st.write(f" **{y.get_nome()}**")
                     st.write(f" Descrição: {y.get_descricao()}.")
-                    st.write(f" Duração: {y.get_duracao()} anos.")         
+                    st.write(f" Duração: {y.get_duracao()} anos.")
+                    chart_data = pd.DataFrame(View.grafico_dic(y))
+                    st.line_chart(chart_data, x = "x", y = "y")             
